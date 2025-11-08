@@ -38,7 +38,7 @@ int gc_rndis_create(int argc,char *argv[],gc_generic_info info)
             .sub_compatible_id = "5162001",
     };
 
-    usbg_ret = usbg_create_function(gadget,USBG_F_RNDIS,id,NULL,&f_rndis);
+    usbg_ret = usbg_create_function(gadget,USBG_F_RNDIS,id,&f_os_desc,&f_rndis);
     if(usbg_ret != USBG_SUCCESS){
         fprintf(stderr,"failed to create rndis function!  (maybe kernel module not loaded?) \n");
         gc_clean();
